@@ -1,4 +1,4 @@
-/************************  x-t diagramma T - Tn  && t1 - t2    ***************/
+/************************  x-t diagram T - Tn  && t1 - t2    ***************/
 #include "list.h"
 
 #define Zz(j,i) *(Zz+N3*(j)+(i))

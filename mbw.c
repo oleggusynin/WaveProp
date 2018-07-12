@@ -1,11 +1,6 @@
-/**************************************************************************/
-/**  mbw.c  (черно-белая графика на виртуальном экране (т.е. в памяти) ****/
-/**************************************************************************/
 #ifndef _MBW_C
 #define _MBW_C
 #include "list.h"
-// graphics.h требуется в случае вывода картинки на экран,
-// при записи только в tif-файл она не нужна
 
 extern int memColor;
 extern int fo[4100];
@@ -13,13 +8,12 @@ extern int fo[4100];
 typedef unsigned char unchar;
 typedef unsigned long unlong;
 
-// Атрибуты для файлов
+
 
 int O_BIN=0,/*S_MOD=S_IWRITE|S_IREAD,*/O_WBC;
 
 mode_t S_MOD=S_IWRITE|S_IREAD;
 //mode_t S_MOD=S_IREAD;
-// Глобальные графические переменные
 unlong   MAXX,MAXY,X_LAST,Y_LAST,BytInLin,BytInMem;
 unchar   *SCR,MASKA[]={128,64,32,16,8,4,2,1};
 

@@ -25,7 +25,7 @@ if(Virt==1) meminitgraph(Height,Width);
 
     h=8./(J-1);
 
-///начальные условия для 2D
+
 double TIMESTART,TIMEEND;
 TIMESTART=omp_get_wtime();
      for(j=0; j<=J; ++j)
@@ -47,7 +47,7 @@ TIMESTART=omp_get_wtime();
                Ht(j,i)=1.;
                Hr(j,i)=4.;
              }
-//             if(((x-4.7)*(x-4.7))/2.+((y-4.3)*(y-4.3))/6.<=0.1) /// эллипс
+//             if(((x-4.7)*(x-4.7))/2.+((y-4.3)*(y-4.3))/6.<=0.1) ///
 //             {
 //               Ht(j,i)=1.;
 //               Hr(j,i)=4.;
@@ -88,7 +88,6 @@ printf("\n\n TIME 1 = %f src\n\n",(TIMEEND-TIMESTART));
 getchar();
 /// - - - - - - - - - - - - - - - -
 
-    ///начальные условия
 
 //        for(j=0; j<=J; ++j)
 //        {
@@ -111,8 +110,8 @@ getchar();
         tau = 1.15*h/(D1+D2);
         if(n<10)tau/=10.;
         SW1D(J,tau/h);
-///проход по горизонтали
-    for(i=1; i<I; ++i)
+///    
+for(i=1; i<I; ++i)
     {
         //загрузка в массив
         for(j=0; j<=J; ++j){ T[j][0]=Hr(j,i);
@@ -129,7 +128,7 @@ getchar();
     }
 
    BC();
-//проход по вертикали
+//
 for(j=1; j<J; ++j)
     {
         //загрузка в массив
@@ -175,7 +174,7 @@ if(Virt==0 && Real==1)
 }
 
 getch();
-///- - - - - пересылка в новый массив -> текущий
+
 for(j=0;j<=J;j++) cik4 T[j][k]=Tn[j][k];
            Time=Time+tau;
     }//Time

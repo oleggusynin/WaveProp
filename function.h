@@ -83,7 +83,7 @@ inline void correct(double * UL, double * UC, double * UR, double * U)
      d1=UC[1]-UL[1];
      e0=UR[0]-UC[0];
      e1=UR[1]-UC[1];
-     //теперь каждый из них умножим на матрицу R-1
+     
      z=0.5*(d0/hhh-d1/c);
      d1=0.5*(d0/hhh+d1/c);
      d0=z;
@@ -125,7 +125,7 @@ inline void WinU(double *U, double *W){
 
 ///==================================================================////////////
 
-void SW1D(int M, double dth)/// 1D представление воды
+void SW1D(int M, double dth)
 {
  int j, k;
     double VL[5], VR[5], W[5],U[5] ,*zL, *z,*zR;
@@ -157,7 +157,7 @@ void SW1D(int M, double dth)/// 1D представление воды
          WinU(Tn[j],W);
      }
 
-///- - - - - вычисления граничных значений ВС для решения
+
 }
 
 void BC()
